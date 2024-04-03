@@ -171,8 +171,65 @@ Después de resolver los conflictos, debes añadir los archivos modificados y lu
 
 
 
+git branch -D mi-nueva-rama -> # Borra la rama
 
 
+ <div class="container">
+        <h2>Cuarto Cambio - Ramas</h2>
+        <p>si queremos probar un nuevo feature, podemos crear una 
+            nueva rama, para probar como se veria, si nos gusta la dejamos
+            haciendo 'merge', sino nos gusta solo eliminamos la rama.
+        </p>
+
+        <p>Creando una nueva Rama:</p>
+        <pre><code>git branch nombre_de_la_rama
+                   # o bien
+       git checkout -b nombre_de_la_rama
+                # Esto es lo mismo que hacer los dos anteriores pasos juntos
+        </code></pre>
+        
+        <p>Listado de ramas:</p>
+        <pre><code>git branch
+               # muestra las ramas locales y remotas
+
+       git branch -a #  Solo lista las ramas remotas
+       git branch -l # Solo lista las ramas locales
+       git branch -r # Solo lista las ramas remotas
+        </code></pre>
+
+        <h1>Movernos a otra rama:</h1>
+        <p>git checkout nombre_de_la_rama</p>
+
+
+        <p>Volver a la rama principal (master):</p>
+        <pre><code>git checkout master
+        </code></pre>
+
+        <p>Mergear una rama en la actual (master)</p>
+        <pre><code>git merge nombre_de_la_rama
+                # Si hay conflictos, Git te avisara y pedira resolverlos
+        </code></pre>
+
+        <p>Si no queremos fusionar pero simplemente queremos tener la rama
+           sin perder el historial, podemos usar "rebase" en lugar de "merge".
+           El rebase pega todos los cambios de la rama a nuestro trabajo actual.</p>
+        <pre><code># En vez de
+           git merge mi-nueva-rama
+
+        # Hacer esto
+           git fetch origin mi-nueva -rama  # Obtener la ultima version de la rama
+           git rebase master mi-nueva-rama    # Pegar mis commits al final del master
+        </code></pre>
+
+        <h3>Borrar una rama</h3>
+        <p>Puedes borrar una rama si ya se ha integrado en otra. Sin embargo, si
+           estás trabajando en ella, primero debes unir tus cambios con algo más
+           antiguo. Puedes hacerlo así:</p>
+        <pre><code>git checkout master   # Volver a master
+           git merge mi-nueva-rama     # Fusiona los cambios a master
+           git branch -d mi-nueva-rama  # Borra la rama
+        </code></pre>
+    </div>
 
 
 
