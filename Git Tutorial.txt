@@ -170,16 +170,34 @@ Después de resolver los conflictos, debes añadir los archivos modificados y lu
 ******************************************************************************
 
 
+git checkout -b mi-nueva-rama ->   # Crea una nueva rama y hace checkout a la vez
 
-git branch -D mi-nueva-rama -> # Borra la rama
+
+git branch -D mi-nueva-rama   ->   # Borra la rama
 
 
- <div class="container">
-        <h2>Cuarto Cambio - Ramas</h2>
-        <p>si queremos probar un nuevo feature, podemos crear una 
-            nueva rama, para probar como se veria, si nos gusta la dejamos
-            haciendo 'merge', sino nos gusta solo eliminamos la rama.
-        </p>
+
+*** PARA HACER UN MERGE DE UNA RAMA O DE LAS RAMAS, DEBEMOS ESTAR EN LA RAMA PRINCIPAL (RAMA MASTER), ENTONCES:
+
+1- git checkout master           -> PARA ENTRAR A LA RAMA PRINCIPAL
+
+2- git merge nombre_de_la_rama   -> COMBINA LAS RAMAS
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ERROR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+ESTE ERROR OCURRE CUANDO ALGUIEN HA MODIFICADO LA RAMA PRINCIPAL (MASTER) Y LUEGO A TRATADO DE HACER UN MERGE. GIT ENVIA ESTE ERROR PK NO SABE CUAL ES EL CAMBIO CORRECTO Y NOS DA UNA ADVERTENCIA.
+
+
+si aparece un error con letras azules, presionamos:
+
+	:wq
+
+
+
 
         <p>Creando una nueva Rama:</p>
         <pre><code>git branch nombre_de_la_rama
