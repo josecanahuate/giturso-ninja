@@ -1,0 +1,185 @@
+************************** GIT - MANEJO DE VERSIONES ************************
+
+
+***** PRIMEROS PASOS CON GIT (Configurando GIT - 1ra Vez)
+
+1- Configurar Email -> git config --global user.email "josecanahuate05@gmail.com"
+
+2- Configurar Nombre -> git config --global user.name "Jose Canahuate"
+
+
+
+
+   ************************** COMANDOS EN GIT ******************************
+
+** git log -> Ver todos los comentarios.
+
+** git log --oneline -> Muestra todos los comentarios y sus id's de los commit
+
+** git log --oneline --stat -> Muestra la cantidad de cambios realizados en cada commit.
+
+** git log nombrearchivo -> Ver los comentarios de un archivo especifico.
+
+** git log -all
+
+
+** git status -> Para saber la rama en la que estamos
+
+** git add . -> Agregar los archivos al repositorio
+
+** git pull -> 
+
+** git clone -> Clona un Repositorio.
+
+	git clone https://github.com/usuario/nombre-repositorio.git
+
+
+** git fetch -> Se trae los cambios del repositorio remoto al repositorio local
+
+** git merge -> Fusiona los cambios con lo que se tenga en el repositorio local.
+
+** git restore . -> restaurar proyecto a su version anterior. (elimina cambios realizados, volviendo al status anterior)
+
+
+** git branch nombre-rama -> Crear una NUEVA RAMA
+** git checkout nombre-rama -> PARA ENTRAR EN UNA RAMA NUEVA
+
+** git branch -m nombre-rama -> 
+
+** git branch -all -> 
+
+** git remote add origin url-repositorio ->
+
+** git push -> 
+
+******************** ACTUALIZAR un proyecto en GitHub ***********************
+
+1- Asegúrate de estar en la rama que contiene tus cambios. Puedes cambiar de rama usando el comando: 
+
+	git checkout nombre_de_la_rama
+
+2- Añade los archivos modificados o nuevos:
+
+	git add .
+
+3- Realiza un commit:
+
+	git commit -m "Mensaje descriptivo de los cambios"
+
+4- Sube los cambios al repositorio remoto:
+
+	git pull origin main
+
+5- Haz un push a la rama
+
+	git push origin main
+
+******************************************************************************
+
+
+Este comando se utiliza para copiar un repositorio Git existente a tu máquina local.
+Inicializar un repositorio Git: git init
+
+Utilizado para convertir un directorio en tu sistema de archivos en un repositorio Git.
+Añadir cambios al área de preparación: git add nombre_del_archivo o git add .
+
+Permite agregar archivos modificados o nuevos al área de preparación para ser incluidos en el próximo commit.
+Realizar un commit: git commit -m "Mensaje descriptivo"
+
+Confirma los cambios agregados al área de preparación junto con un mensaje descriptivo que explica los cambios realizados.
+Verificar el estado de los archivos: git status
+
+Muestra el estado actual de los archivos en tu repositorio, incluyendo cambios sin seguimiento, cambios en el área de preparación y el estado de la rama.
+Ver el historial de commits: git log
+
+Muestra una lista de todos los commits en la rama actual, incluyendo información como el autor, fecha y mensaje del commit.
+Crear una nueva rama: git branch nombre_de_la_rama
+
+Crea una nueva rama en tu repositorio, permitiéndote trabajar en características o correcciones de errores sin afectar la rama principal.
+Cambiar de rama: git checkout nombre_de_la_rama
+
+Cambia de una rama a otra en tu repositorio.
+Actualizar tu repositorio local con cambios remotos: git pull
+
+Descarga los cambios más recientes desde el repositorio remoto y los fusiona automáticamente en tu rama local.
+Enviar cambios al repositorio remoto: git push
+
+Sube tus cambios confirmados al repositorio remoto.
+Resolver conflictos de fusión: Durante un pull o push, es posible que ocurran conflictos de fusión cuando hay cambios simultáneos en la misma parte del código. Debes saber cómo resolver estos conflictos manualmente.
+
+Crear y aplicar parches: 
+
+	git diff, git format-patch, git apply
+
+
+
+
+********************* Subir un proyecto a una nueva rama *********************
+
+1- ** Crear una nueva rama localmente: Este comando crea una nueva rama y automáticamente cambia a ella.
+
+	git checkout -b nombre_de_la_nueva_rama
+
+
+2- ** Agregar y confirmar tus cambios en la nueva rama:
+
+	git add .
+	git commit -m "Mensaje descriptivo"
+
+
+3- ** Enviar la nueva rama al repositorio remoto: Esto establece la nueva rama en el repositorio remoto.
+	
+	git push -u origin nombre_de_la_nueva_rama
+
+******************************************************************************
+
+
+
+
+
+*************************** Combinar proyectos *******************************
+
+1- ** Cambia a la rama destino donde deseas fusionar los cambios:
+
+	git checkout nombre_de_la_rama_destino
+
+
+2- ** Fusiona la rama que deseas incorporar: Este comando fusionará los cambios de la otra rama en la rama actual.
+
+	git merge nombre_de_la_otra_rama
+
+******************************************************************************
+
+
+
+*************************** Rebase (Rebasing) *******************************
+
+1- ** Cambia a la rama que deseas rebasear:
+
+	git checkout nombre_de_la_rama_que_quieres_rebasear
+
+2- ** Rebasa la rama objetivo en la rama actual:
+
+	git rebase nombre_de_la_rama_objetivo
+
+
+Conflictos de fusión y rebase:
+Durante una fusión o un rebase, es posible que surjan conflictos si hay cambios en las mismas partes de los archivos en ambas ramas. Si esto sucede, Git te indicará los archivos en conflicto. Deberás resolver manualmente estos conflictos editando los archivos afectados, marcando las partes conflictivas y luego marcándolas como resueltas.
+
+Después de resolver los conflictos, debes añadir los archivos modificados y luego realizar el commit para completar la fusión o rebase.
+******************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
